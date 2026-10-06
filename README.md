@@ -71,6 +71,7 @@ Plus: history with resume, time-range extraction for long videos, optional backg
 **Prerequisites**
 - Python 3.10 or 3.11
 - ffmpeg on your PATH (Windows: `winget install Gyan.FFmpeg` · macOS: `brew install ffmpeg`)
+  note: Windows: winget install Gyan.FFmpeg
 
 **Install & run**
 ```bash
