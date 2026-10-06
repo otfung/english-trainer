@@ -15,8 +15,11 @@ yt-dlp==2026.6.9
 # 无字幕时本地转写。
 # ⚠ ctranslate2 必须锁 4.4.0：新版在部分 CPU（如 AMD Ryzen 6000 系）上加载模型会直接段错误（exit 139），见 README「兼容性踩坑」
 faster-whisper==1.2.1
-ctranslate2==4.4.0
-numpy==1.26.4          # 锁 <2，否则 ctranslate2/faster-whisper 报 "Failed to initialize NumPy"
+ctranslate2==4.6.1
+setuptools<81             # ctranslate2 imports pkg_resources, removed in setuptools 81+
+av<19                     # faster-whisper 1.2.1 passes metadata_errors, removed in PyAV 19+
+# numpy==1.26.4          # 锁 <2，否则 ctranslate2/faster-whisper 报 "Failed to initialize NumPy"
+numpy>=2.5
 
 # 发音评测（Azure；可选功能，没配 key 会自动退回浏览器识别，不影响其余模式）
 azure-cognitiveservices-speech==1.50.0
